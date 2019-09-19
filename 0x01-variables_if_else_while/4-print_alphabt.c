@@ -9,7 +9,7 @@ char a = 'a';
 while (a <= 'z')
 {
 putchar(a);
-if (a == 'd' || a == 'o')
+if (a == 'd' || a == 'p')
 {
 a = a + 2;
 }
