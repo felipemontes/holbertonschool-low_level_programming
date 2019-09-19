@@ -6,14 +6,14 @@
 int main(void)
 {
 char a = 'a';
-while(a <= 'z')
+while (a <= 'z')
 {
 putchar(a);
-if(a == 'd' || a == 'o')
+if (a == 'd' || a == 'o')
 {
-a= a+2;
+a = a + 2;
 }
-a++; 
+a++;
 }
 putchar('\n');
 return (0);
