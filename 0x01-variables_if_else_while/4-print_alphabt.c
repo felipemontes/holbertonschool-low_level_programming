@@ -11,7 +11,7 @@ while (a <= 'z')
 putchar(a);
 if (a == 'd' || a == 'p')
 {
-a = a + 2;
+a = a + 1;
 }
 a++;
 }
