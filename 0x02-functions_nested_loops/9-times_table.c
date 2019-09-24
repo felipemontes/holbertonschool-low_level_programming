@@ -11,11 +11,11 @@ void times_table(void)
 	int b;
 	int c;
 
-	while(a < 10 )
+	while (a < 10)
 	{
 		_putchar('0');
 		b = 1;
-		while(b < 10)
+		while (b < 10)
 		{
 			_putchar(',');
 			_putchar(' ');
