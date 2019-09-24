@@ -14,6 +14,7 @@ int main(void)
 	int t = 't';
 	int z = 'o';
 	int n = 'n';
+
 	_putchar(h);
 	_putchar(o);
 	_putchar(l);
