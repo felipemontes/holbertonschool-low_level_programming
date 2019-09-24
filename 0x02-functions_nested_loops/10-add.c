@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  * add - adds two intergers
- * @a: Var uno
+ * @c: Var uno
  * Return: 1 if is lower or upper case.
  * On error, -1 is returned, and errno is set appropriately.
  */
