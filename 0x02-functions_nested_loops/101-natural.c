@@ -18,5 +18,6 @@ int main(void)
 		a++;
 	}
 	printf("%lu", sum);
+	printf("\n");
 	return (0);
 }
