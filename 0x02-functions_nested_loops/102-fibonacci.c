@@ -25,5 +25,6 @@ int main(void)
 		b = c;
 		d++;
 	}
+	printf("\n");
 	return (0);
 }
