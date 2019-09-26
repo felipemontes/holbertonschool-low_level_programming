@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * c - multiplies two intergers
+ * mul - multiplies two intergers
  * @a: interger to multiply
  * @b: second interger
  * Return: 0
