@@ -5,21 +5,21 @@
  */
 int main(void)
 {
-        int a = 2;
-        long int factor, num = 612852475143;
+	int a = 2;
+	long int factor, num = 612852475143;
 
-        factor = num;
-        while (factor > 1)
-        {
-                if ((factor % a) == 0)
-                {
-                        factor /= a; /*factor = factor/a*/
-                }
-                else
-                {
-                        a++;
-                }
-        }
-        printf("%d\n", a);
-        return (0);
+	factor = num;
+	while (factor > 1)
+	{
+		if ((factor % a) == 0)
+		{
+			factor /= a;
+		}
+		else
+		{
+			a++;
+		}
+	}
+	printf("%d\n", a);
+	return (0);
 }
