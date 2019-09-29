@@ -6,17 +6,17 @@
  */
 void print_number(int n)
 {
-        unsigned int number;
+	unsigned int number;
 
-        number = n;
-        if (n < 0)
-        {
-                number = number * -1;
-                _putchar ('-');
-        }
-        if (n / 10)
-        {
-                print_number(number / 10);
-        }
-        _putchar(number % 10 + '0');
+	number = n;
+	if (n < 0)
+	{
+		number = number * -1;
+		_putchar ('-');
+	}
+	if (n / 10)
+	{
+		print_number(number / 10);
+	}
+	_putchar(number % 10 + '0');
 }
