@@ -9,7 +9,7 @@
 int main(int argc, char *argv[])
 {
 	int i = 0;
-	int value[] = {25, 10, 5, 2 , 1};
+	int value[] = {25, 10, 5, 2, 1};
 	int cents;
 	int b = 1;
 	int change = atoi(argv[b]);
