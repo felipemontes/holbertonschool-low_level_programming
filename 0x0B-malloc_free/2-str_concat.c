@@ -51,6 +51,9 @@ char *str_concat(char *s1, char *s2)
 {
 	char *a = NULL;
 
+	s1 = (s1) ? s1 : "";
+	s2 = (s2) ? s2 : "";
+
 	a = malloc((_strlen(s1) + _strlen(s2)) * sizeof(char) + 1);
 
 	if (!a)
