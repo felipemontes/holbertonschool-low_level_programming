@@ -42,7 +42,15 @@ char *_strdup(char *str)
 {
 	char *a;
 
-	a = malloc(_strlen(str) * sizeof(char);
+	if (str == '\0')
+	{
+		return (NULL);
+	}
+	a = malloc(_strlen(str) * sizeof(*a) + 1);
+	if (a == '\0')
+	{
+		return (NULL);
+	}
 	_strcpy(a, str);
 	return (a);
 }
