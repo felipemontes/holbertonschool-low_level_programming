@@ -17,30 +17,6 @@ int _strlen(char *s)
 	return (c);
 }
 /**
- * _strncat - concatenates two strings
- * @dest: dest
- * @src: src
- * @n: amout of bytes
- * Return: void
- */
-char *_strncat(char *dest, char *src, int n)
-{
-	char *a = dest;
-	int i;
-	int len;
-
-	while (dest[len] != '\0')
-	{
-		len++;
-	}
-	for (i = 0; i < n && src[i] != '\0'; i++)
-	{
-		dest[len + i] = src[i];
-	}
-	dest[len + i] = '\0';
-	return (a);
-}
-/**
  * string_nconcat - function to concatenate two strings
  * @s1: string one
  * @s2: string two
@@ -49,14 +25,32 @@ char *_strncat(char *dest, char *src, int n)
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int *str;
+	char *str;
+	unsigned int i;
+	unsigned int b;
 
+	if (s1 == NULL)
+	{
+		s1 = "";
+	}
+	if (s2 == NULL)
+	{
+		s2 = "";
+	}
 	str = malloc((_strlen(s1) + n) * sizeof(char) + 1);
-
-	if(str == NULL)
+	if (str == NULL)
 	{
 		return (NULL);
 	}
-	_strncat(str, s2, n);
+	for (i = 0; s1[i] != '\0'; i++)
+	{
+		str[i] = s1[i];
+	}
+	for (b = 0; b < n && s2[b] != '\0'; b++)
+	{
+		str[i] = s2[b];
+		i++;
+	}
+	str[i] = '\0';
 	return (str);
 }
