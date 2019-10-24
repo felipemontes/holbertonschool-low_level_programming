@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "3-calc.h"
 /**
  * main - calculator
@@ -13,13 +14,13 @@ int main(int argc, char *argv[])
 	int res;
 	int (*op)(int, int);
 
-	if (argc > 4)
+	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	if (*argv[2] != '+' && *argv[2] != '-' && *argv[2] != '*' &&
-	    *argv[2] != '/' && *argv[2] != '%')
+	if ((*argv[2] != '+' && *argv[2] != '-' && *argv[2] != '*' &&
+	     *argv[2] != '/' && *argv[2] != '%') || strlen(argv[2]) != 1)
 	{
 		printf("Error\n");
 		exit(99);
