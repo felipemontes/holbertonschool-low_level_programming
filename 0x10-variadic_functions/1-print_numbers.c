@@ -4,7 +4,7 @@
 /**
  * print_numbers - function to print numbers
  * @separator: string to be printes between numbers
- * @n: numbers
+ * @n: input numbers
  *
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
@@ -18,8 +18,10 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		int let = va_arg(arg, int);
 
 		printf("%d", let);
-		if (i == n - 1 && separator != NULL)
-		printf("%d%c ", *separator);
+		if (i < n - 1 && separator != NULL)
+		{
+		printf("%c ", *separator);
+		}
 	}
 	printf("\n");
 	va_end(arg);
