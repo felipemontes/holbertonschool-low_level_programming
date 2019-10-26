@@ -17,14 +17,9 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	{
 		int let = va_arg(arg, int);
 
-		if (i == n - 1)
-		{
-			printf("%d", let);
-		}
-		else
-		{
-			printf("%d%c ", let, *separator);
-		}
+		printf("%d", let);
+		if (i == n - 1 && separator != NULL)
+		printf("%d%c ", *separator);
 	}
 	printf("\n");
 	va_end(arg);
