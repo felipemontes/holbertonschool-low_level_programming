@@ -21,10 +21,10 @@ list_t *add_node(list_t **head, const char *str)
 	{
 		return (NULL);
 	}
-	if (head != NULL)
-	{
 	new_node->len = i;
 	new_node->str = strdup(str);
+	if (head != NULL)
+	{
 	new_node->next = *head;
 	*head = new_node;
 	}
