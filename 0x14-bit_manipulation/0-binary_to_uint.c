@@ -7,27 +7,32 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int dec = 0, rem = 0, base = 1;
-	int bin;
-	unsigned int i = 0;
+	int res = 0;
+	int len = 0;
+	int i = 0, a = 0;
 
-	bin = atoi(b);
 	if (b == NULL)
 	{
 		return (0);
 	}
-	while (b[i] != 0)
+	while (b[len] != '\0')
 	{
-		if (b[i] != '0' && b[i] != '1')
+		len++;
+	}
+
+	a = len - 1;
+	for (; a >= 0; a--)
+	{
+		if (b[a] != '0' && b[a] != '1')
 		{
 			return (0);
 		}
-			rem = bin % 10;
-			dec = dec + rem * base;
-			bin = bin / 10;
-			base = base * 2;
+		else
+		{
+			res += (b[a] - '0') << i;
 			i++;
+		}
 	}
 
-	return (dec);
+	return (res);
 }
