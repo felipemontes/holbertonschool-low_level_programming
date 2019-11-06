@@ -2,7 +2,7 @@
 /**
  * clear_bit - function to set the value of a bit to 0
  * @n: number
- * @index: index number
+ * @index: index number to be changed
  * Return: 1 if it worked or -1 if not
  */
 int clear_bit(unsigned long int *n, unsigned int index)
@@ -15,7 +15,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	}
 	while (i <= index)
 	{
-		*n = (*n & (~1 << index));
+		*n = (*n & ~(1 << index));
 		i++;
 	}
 	return (1);
