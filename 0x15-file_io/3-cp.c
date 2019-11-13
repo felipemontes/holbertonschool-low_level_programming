@@ -12,7 +12,7 @@
  */
 int _copy(char *filefrom, char *fileto)
 {
-	int fd, fp, limit;
+	int fd, fp, limit, c1, c2;
 	char *buf;
 
 	fd = open(filefrom, O_RDONLY);
@@ -29,7 +29,7 @@ int _copy(char *filefrom, char *fileto)
 	}
 
 	buf = malloc(1024);
-	while ((limit = read(fd, buf, 1024)) != 0)
+	while ((limit = read(fd, buf, 1024)) > 0)
 	{
 		if (write(fp, buf, limit) != limit)
 		{
@@ -37,13 +37,14 @@ int _copy(char *filefrom, char *fileto)
 			exit(99);
 		}
 	}
-
-	if (fd == -1)
+	c1 = close(fd);
+	if (c1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
-	if (fp == -1)
+	c2 = close(fp);
+	if (c2 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fp);
 		exit(100);
