@@ -1,24 +1,5 @@
 #include "hash_tables.h"
 /**
- * h_index - function to get the hash
- * @key: key to hash
- * @size: size of the hash
- * Return: return the hash
- */
-unsigned int h_index(const char *key, unsigned int size)
-{
-	unsigned int h_index = 0;
-	unsigned int i = 0;
-
-	while (key[i])
-	{
-		h_index += key[i] % size;
-		i++;
-	}
-
-	return (h_index);
-}
-/**
  * hash_table_set - creates a new node in the hashtable
  * @ht: pointer to the hashtable
  * @key: key
@@ -31,13 +12,13 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int haidx;
 	hash_node_t *tmp;
 
-	if (ht == NULL || key == '\0')
+	if (ht == NULL || key == '\0' || *key == '\0')
 		return (0);
 	if (newnode == NULL)
 		return (0);
 	newnode->key = strdup(key);
 	newnode->value = strdup(value);
-	haidx = h_index(newnode->key, ht->size);
+	haidx = key_index((unsigned char *)key, ht->size);
 	if (ht->array[haidx] != NULL)
 	{
 		tmp = ht->array[haidx];
