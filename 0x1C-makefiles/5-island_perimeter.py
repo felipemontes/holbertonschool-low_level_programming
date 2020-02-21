@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 ''' Island perimeter '''
+
+
 def island_perimeter(grid):
     count = 0
     for i in range(len(grid)):
